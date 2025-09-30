@@ -2,31 +2,29 @@ programa {
   funcao inicio() {
     real num1, num2, resul
     caracter var
-    escreva ("Para começarmos, me diga o primeiro valor: ")
+    escreva ("Para começarmos, me dê o primeiro número: ")
     leia (num1)
-    escreva ("Agora, me informe a operação (+ para adição, - para subtração, * para multiplicação, / para divisão): ")
+    escreva ("Agora, me dê a operação que você quer usar (+ para adição, - para subtração, * para multiplicação, / para divisão): ")
     leia (var)
-    escreva ("Agora me dê o segundo valor: ")
+    escreva ("Por último, me dê o segundo número: ")
     leia (num2) 
-    escolha (var) {
-      caso '+' :
+    se (var == '+') {
       resul = num1+num2
       escreva ("O resultado é: ", resul)
-      pare
-      caso '-':
-      resul = num1-num2
-      escreva ("O resultado é: ", resul)
-      pare
-      caso '*':
-      resul = num1*num2
-      escreva ("O resultado é: ", resul)
-      pare
-      caso '/':
-      resul = num1/num2
-      escreva ("O resultado é: ", resul)
-      pare
-      caso contrario:
-      escreva ("Operação inválida, tente novamente.")
-   }
+      } senao {se (var == '-') {
+        resul = num1-num2
+        escreva ("O resultado é: ", resul)
+        } senao {se (var == '*') {
+          resul = num1*num2
+          escreva ("O resultado é: ", resul)
+          } senao {se (var == '/') {
+            resul = num1/num2
+            escreva ("O resultado é: ", resul)
+            } senao {
+            escreva ("Operação inválida, tente novamente.")
+          }
+        }
+      }
+    }
   }
 }
